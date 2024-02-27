@@ -1,0 +1,65 @@
+# Django settings and secrets
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3  # For development DB only
+media/    # For user-uploaded media (excluding settings)
+requirements.txt  # Use a separate dependency management tool
+
+# IDE/testing/coverage artifacts
+.idea/
+*.iws
+out/
+.coverage
+.pytest_cache/
+nosetests.xml
+.hypothesis/
+
+# IDE-specific preferences
+.vscode/  # Exclude all except settings.json and tasks.json (if needed)
+*.sublime-workspace
+*.sublime-project
+
+# Local development environment
+venv/
+*.env
+
+# Sensitive files
+.env  # For local environment variables
+secret.key  # Or other secret configuration files
+
+# Generated data/caches
+*.sqlite
+*.pickle
+*.cache
+
+# Temporary test outputs
+test_*.txt
+tests_*.html
+
+# Vendor directory for third-party packages
+vendor/  # If you manually manage third-party dependencies
+
+# Build artifacts
+build/
+dist/
+eggs/
+.eggs/
+bin/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
