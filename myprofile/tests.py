@@ -30,7 +30,7 @@ class ProfileAPITestCase(TestCase):
             "last_name": "New Last Name",
             "email": "new_email@example.com",
             "age": 30,
-            "gender": "male",  # Provide a valid value for gender
+            "gender": "male",
         }
         url = reverse("profile-update", kwargs={"pk": self.profile.pk})
         response = self.client.put(url, new_data)
@@ -42,7 +42,7 @@ class ProfileAPITestCase(TestCase):
         self.assertEqual(self.profile.age, 30)
 
     def test_profile_update_unauthenticated(self):
-        self.client.force_authenticate(user=None)  # Unauthenticate user
+        self.client.force_authenticate(user=None)
         url = reverse("profile-update", kwargs={"pk": self.profile.pk})
         response = self.client.put(url, {})
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)

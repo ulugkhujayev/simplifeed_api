@@ -4,11 +4,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
-load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 AUTH_USER_MODEL = "myprofile.CustomUser"
 
@@ -80,10 +79,11 @@ TEMPLATES = [
 # WSGI application
 WSGI_APPLICATION = "core.wsgi.application"
 
+load_dotenv()
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": os.getenv("DB_NAME"),
         "USER": os.getenv("DB_USER"),
         "PASSWORD": os.getenv("DB_PASSWORD"),
@@ -91,6 +91,17 @@ DATABASES = {
         "PORT": os.getenv("DB_PORT"),
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "simplifeed_db",
+#         "USER": "simplifeed_user",
+#         "PASSWORD": "simplifeed_password",
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     },
+# }
 
 # Password validation settings
 AUTH_PASSWORD_VALIDATORS = [
